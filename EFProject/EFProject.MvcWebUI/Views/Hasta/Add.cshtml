@@ -1,0 +1,70 @@
+﻿@model EFProject.MvcWebUI.Models.HastaAddViewModel
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Hasta Ekle</title>
+    <link href="~/Content/bootstrap.min.css" rel="stylesheet" />
+    <script src="~/Scripts/jquery-3.0.0.min.js"></script>
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+</head>
+<body class="bg-light">
+
+    <div class="container">
+        <div class="py-5 text-center">
+            <img class="d-block mx-auto mb-4" src="../../assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
+            <h2>Kayıt Formu</h2>
+            <p class="lead">Lütfen bilgilerinizi giriniz</p>
+            <p class="lead" style="color: red;">@Html.ValidationMessage("FilterException")</p>
+        </div>
+
+        <div class="row">
+
+            <div class="col-md-12 order-md-1">
+                <h4 class="mb-3">Hasta Ekle</h4>
+                @using (Html.BeginForm())
+                {
+                <div class="row">
+                    <div class="col-md-6 mb-3">
+                        <label for="tcNo">T.C. No</label>
+                        @Html.TextBoxFor(m => m.hasta.TCNo, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.hasta.TCNo, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="AdSoyad">Ad Soyad</label>
+                        @Html.TextBoxFor(m => m.hasta.Ad_Soyad, new { @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.hasta.Ad_Soyad, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="col-md-6 mb-3">
+                        <label for="DogumYil">Dogum Yılı</label>
+                        @Html.TextBoxFor(m => m.hasta.DogumYili, new { @type = "number", @class = "form-control" })
+                        @Html.ValidationMessageFor(model => model.hasta.DogumYili, "", new { @class = "text-danger" })
+                    </div>
+
+                </div>
+
+                    <hr class="mb-4">
+
+                    <button class="btn btn-primary btn-lg btn-block" type="submit">Kaydet</button>
+                }
+            </div>
+        </div>
+
+        <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2017-2018 Company Name</p>
+            <ul class="list-inline">
+                <li class="list-inline-item"><a href="#">Privacy</a></li>
+                <li class="list-inline-item"><a href="#">Terms</a></li>
+                <li class="list-inline-item"><a href="#">Support</a></li>
+            </ul>
+        </footer>
+    </div>
+
+</body>
+</html>
