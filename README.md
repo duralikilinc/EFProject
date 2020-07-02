@@ -11,3 +11,5 @@ Demonstrates the use of layered architectural pattern in accordance with SOLID p
 * FluentValidation
 * Bootstrap
 * JQuery
+
+PostSharp download link: https://www.postsharp.net/downloads/postsharp-4.2/v4.2.17/PostSharp-4.2.17.exe
